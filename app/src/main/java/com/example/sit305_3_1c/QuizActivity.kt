@@ -18,7 +18,6 @@ class QuizActivity : Activity() {
     private lateinit var welcomeText: TextView
     private lateinit var questionTitleText: TextView
     private lateinit var questionDetailText: TextView
-    private lateinit var feedbackText: TextView
     private lateinit var submitButton: Button
     private lateinit var nextButton: Button
 
@@ -45,7 +44,6 @@ class QuizActivity : Activity() {
         welcomeText = findViewById(R.id.welcomeText)
         questionTitleText = findViewById(R.id.questionTitleText)
         questionDetailText = findViewById(R.id.questionDetailText)
-        feedbackText = findViewById(R.id.feedbackText)
         submitButton = findViewById(R.id.submitButton)
         nextButton = findViewById(R.id.nextButton)
         answerButtons = listOf(
@@ -88,7 +86,6 @@ class QuizActivity : Activity() {
             answerButtons[index].isEnabled = true
         }
 
-        feedbackText.visibility = View.GONE
         submitButton.visibility = View.VISIBLE
         submitButton.isEnabled = true
         nextButton.visibility = View.GONE
@@ -107,12 +104,8 @@ class QuizActivity : Activity() {
         val isCorrect = selectedAnswerIndex == question.correctAnswerIndex
         if (isCorrect) {
             score += 1
-            feedbackText.text = "Correct!"
-        } else {
-            feedbackText.text = "Incorrect. Correct answer: ${question.answerOptions[question.correctAnswerIndex]}"
         }
 
-        feedbackText.visibility = View.VISIBLE
         submitButton.visibility = View.GONE
         nextButton.visibility = View.VISIBLE
         answerButtons.forEach { it.isEnabled = false }

@@ -2,7 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_screen"
+    android:background="#FFFFFFFF"
     android:fillViewport="true">
 
     <LinearLayout
@@ -17,39 +17,45 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:background="@drawable/bg_card"
             android:orientation="vertical"
             android:padding="20dp">
-
-            <TextView
-                android:id="@+id/progressText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:text="1/5"
-                android:textColor="#374151"
-                android:textSize="14sp"
-                android:textStyle="bold" />
-
-            <ProgressBar
-                android:id="@+id/quizProgressBar"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="match_parent"
-                android:layout_height="10dp"
-                android:layout_marginTop="8dp"
-                android:max="5"
-                android:progress="1"
-                android:progressDrawable="@drawable/progress_quiz" />
 
             <TextView
                 android:id="@+id/welcomeText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="26dp"
                 android:text="Welcome!"
                 android:textColor="#1F2937"
                 android:textSize="20sp"
                 android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/progressText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="12dp"
+                    android:text="1/5"
+                    android:textColor="#374151"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <ProgressBar
+                    android:id="@+id/quizProgressBar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="10dp"
+                    android:layout_weight="1"
+                    android:max="5"
+                    android:progress="1"
+                    android:progressDrawable="@drawable/progress_quiz" />
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/questionTitleText"
@@ -100,17 +106,6 @@
                 android:text="Answer 3"
                 android:textColor="#1F2937"
                 android:textSize="15sp" />
-
-            <TextView
-                android:id="@+id/feedbackText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="18dp"
-                android:gravity="center"
-                android:textColor="#1F2937"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:visibility="gone" />
 
             <Button
                 android:id="@+id/submitButton"
