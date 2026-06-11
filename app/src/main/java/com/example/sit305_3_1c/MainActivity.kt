@@ -13,6 +13,10 @@ class MainActivity : Activity() {
         setContentView(R.layout.activity_main)
 
         val nameEditText = findViewById<EditText>(R.id.nameEditText)
+        intent.getStringExtra(EXTRA_PLAYER_NAME)?.let { playerName ->
+            nameEditText.setText(playerName)
+        }
+
         val startButton = findViewById<Button>(R.id.startButton)
 
         startButton.setOnClickListener {
