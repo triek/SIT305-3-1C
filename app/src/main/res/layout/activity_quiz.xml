@@ -41,7 +41,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="12dp"
-                    android:text="1/5"
+                    android:text="Completed 0/5"
                     android:textColor="#374151"
                     android:textSize="14sp"
                     android:textStyle="bold" />
@@ -53,7 +53,7 @@
                     android:layout_height="10dp"
                     android:layout_weight="1"
                     android:max="5"
-                    android:progress="1"
+                    android:progress="0"
                     android:progressDrawable="@drawable/progress_quiz" />
             </LinearLayout>
 
