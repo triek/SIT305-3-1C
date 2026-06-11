@@ -75,10 +75,10 @@ class QuizActivity : Activity() {
         hasSubmittedCurrentQuestion = false
 
         welcomeText.text = "Welcome $playerName!"
-        progressText.text = "${currentQuestionIndex + 1}/${questions.size}"
         quizProgressBar.max = questions.size
-        quizProgressBar.progress = currentQuestionIndex + 1
-        questionTitleText.text = question.title
+        quizProgressBar.progress = currentQuestionIndex
+        progressText.text = "Completed $currentQuestionIndex/${questions.size}"
+        questionTitleText.text = "Question ${currentQuestionIndex + 1} of ${questions.size}: ${question.title}"
         questionDetailText.text = question.questionText
 
         question.answerOptions.forEachIndexed { index, answer ->
@@ -108,6 +108,8 @@ class QuizActivity : Activity() {
 
         submitButton.visibility = View.GONE
         nextButton.visibility = View.VISIBLE
+        quizProgressBar.progress = currentQuestionIndex + 1
+        progressText.text = "Completed ${currentQuestionIndex + 1}/${questions.size}"
         answerButtons.forEach { it.isEnabled = false }
         updateAnswerButtonBackgrounds()
     }
